@@ -1,16 +1,12 @@
 const split2 = require('split2')
-const base32 = require('bs32')
 const { Zone } = require('bns')
 const { SkynetClient } = require('@skynetlabs/skynet-nodejs')
+const decode = require('./decode')
 
 const client = new SkynetClient();
 
 module.exports = function (skylink, portalUrl='https://siasky.net/') {
-  skylink = base32.decode(skylink)
-    .toString('base64')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/\=/g, '')
+  skylink = decode(skylink)
   return new Promise(async (resolve, reject) => {
     const zone = new Zone()
     try {
@@ -24,7 +20,6 @@ module.exports = function (skylink, portalUrl='https://siasky.net/') {
       
       const stream = response.data.pipe(split2())
       stream.on('data', data => {
-        console.log(skylink, data.toString())
         try {
           if (data.length) {
             data = data.toString()
