@@ -6,12 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Cybr Labs",
+  "bin": {
+    "skylink2bs32": "./bin/encodeSkylink.js"
+  },
   "license": "ISC",
   "dependencies": {
     "@skynetlabs/skynet-nodejs": "^2.4.1",
+    "bns": "^0.15.0",
+    "bns-plus": "^0.15.1",
     "bs32": "^0.1.6",
     "hipr": "^0.1.1",
+    "json5": "^2.2.0",
     "node-fetch": "^3.2.0",
     "split2": "^4.1.0"
   }

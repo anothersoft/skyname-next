@@ -1,0 +1,6 @@
+{
+	port: 53,
+	nameservers: ["127.0.0.1:5341"],
+	skynetPortal: "https://skynetpro.net",
+	rootNameserver: "127.0.0.1:5369",
+}
