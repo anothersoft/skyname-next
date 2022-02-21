@@ -48,5 +48,7 @@ server.resolver.use(
 		}
 	}
 );
-
-server.bind(config.port, "127.0.0.1");
+server.resolver.on("query", (req, res, rinfo) => {
+	console.log(req, res, rinfo);
+});
+server.bind(config.port, "0.0.0.0");
