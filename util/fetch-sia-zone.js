@@ -1,7 +1,7 @@
 const split2 = require("split2");
 const { Zone } = require("bns");
 let config = require("json5").parse(
-	require("fs").readFileSync("../config.json5", "utf8")
+	require("fs").readFileSync("./config.json5", "utf8")
 );
 const { SkynetClient } = require("@skynetlabs/skynet-nodejs");
 const decode = require("./decodeSkylink");
