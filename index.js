@@ -49,4 +49,4 @@ server.resolver.use(
 	}
 );
 
-server.bind(5333, "127.0.0.1");
+server.bind(config.port, "127.0.0.1");
